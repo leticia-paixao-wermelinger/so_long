@@ -6,7 +6,7 @@
 /*   By: lpaixao- <lpaixao-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 13:29:07 by lpaixao-          #+#    #+#             */
-/*   Updated: 2024/03/13 14:43:23 by lpaixao-         ###   ########.fr       */
+/*   Updated: 2024/03/13 16:13:49 by lpaixao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	verify_map_items(char **map)
 		while (map[i][j])
 		{
 			c = map[i][j];
-			if (c != '1' && c != '0' && c != 'E' && c != 'P' && c != 'C')
+			if (c != '1' && c != '0' && c != 'E' && c != 'P' && c != 'C' && c == ' ')
 				return (WRONG_CHARACTER);
 			j++;
 		}
@@ -107,20 +107,17 @@ int	map_is_square(char **map)
 	int	width;
 
 	i = 0;
-	width = 0;
+	width = my_strlen(map[i]);
 	while (map[i])
 	{
 		j = 0;
 		while (map[i][j])
 		{
 			j++;
-		}
-		if (width == 0)
-			width = j;
-		else
+		} 
+		if (width != j)
 		{
-			if (width != j)
-				return (SQUARE_MAP);
+			return (SQUARE_MAP);
 		}
 		i++;
 	}
