@@ -9,7 +9,7 @@ So_long is a 2D game, written in C, in which the player must eat all the collect
 make run
 
 ##Map
-You can write any map you like, saving it in the 'maps' directory and using the '.ber' extension.
+You can write any map you like, saving it in the 'maps' folder and using the '.ber' extension.
 1 - Wall (the player can not go through it);
 0 - Empty space;
 P - Player;
@@ -20,4 +20,4 @@ C - Collectable.
 The player can be controlled using the keyboard's arrow keys or the W, A, S, and D keys.
 
 ##Closing the game
-The game is closed when you win it or by pressing the ESC key or by clicking int the (x) in the top corner of the window.
+The game is closed when you win it or by pressing the ESC key or by clicking in the (x) in the top corner of the window.
