@@ -6,7 +6,7 @@
 /*   By: lpaixao- <lpaixao-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 19:06:56 by lpaixao-          #+#    #+#             */
-/*   Updated: 2024/03/09 18:44:22 by lpaixao-         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:08:55 by lpaixao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,22 @@ int	verify_extension(char *str)
 	}
 	if (i < 0)
 		return (FILE_EXTENSION_ERROR);
+	return (NO_ERROR);
+}
+
+int	check_clear_line(char *map)
+{
+	int	i;
+
+	i = 0;
+	while (map[i])
+	{
+		if (map[i] == '\n' && map[i + 1] == '\n')
+		{
+			free(map);
+			return (MAP_ERROR);
+		}
+		i++;
+	}
 	return (NO_ERROR);
 }

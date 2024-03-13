@@ -6,7 +6,7 @@
 /*   By: lpaixao- <lpaixao-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:06:18 by lpaixao-          #+#    #+#             */
-/*   Updated: 2024/03/13 15:04:55 by lpaixao-         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:03:37 by lpaixao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 # include "libs/libft/libft.h"
 # include "libs/minilibx/mlx.h"
 # include <fcntl.h>
-
-//# include <stdlib.h>
-//# include <unistd.h>
 
 enum e_error_messages {
 	NO_ERROR = 1,
@@ -94,6 +91,7 @@ t_map		*declare_or_map(int fd);
 int			print_error(int e);
 int			verify_extension(char *str);
 char		**read_map(int fd);
+int			check_clear_line(char *map);
 int			verify_map_pec(char **map);
 int			check_pec(char **map, char c);
 int			check_c(char **map, char c);

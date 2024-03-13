@@ -6,7 +6,7 @@
 /*   By: lpaixao- <lpaixao-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:09:07 by lpaixao-          #+#    #+#             */
-/*   Updated: 2024/03/13 14:13:50 by lpaixao-         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:14:24 by lpaixao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ t_map	*declare_or_map(int fd)
 
 	or_map = my_calloc(1, sizeof(t_map));
 	or_map->map = read_map(fd);
+	if (or_map->map == NULL)
+	{
+		print_error(MAP_ERROR);
+		free(or_map);
+		exit(0);
+	}
 	or_map->width = find_size(or_map, 'x');
 	or_map->height = find_size(or_map, 'y');
 	or_map->x = find_position(or_map->map, 'x');

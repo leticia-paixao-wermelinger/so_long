@@ -6,7 +6,7 @@
 /*   By: lpaixao- <lpaixao-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:17:46 by lpaixao-          #+#    #+#             */
-/*   Updated: 2024/03/13 14:57:28 by lpaixao-         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:09:03 by lpaixao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ char	**read_map(int fd)
 	char	**vect;
 	int		count;
 
-	(void)fd;
 	count = 1;
 	map = NULL;
 	line = get_next_line(fd);
@@ -64,6 +63,8 @@ char	**read_map(int fd)
 		line = get_next_line(fd);
 	}
 	free(line);
+	if (check_clear_line(map) == MAP_ERROR)
+		return (NULL);
 	vect = my_split(map, '\n');
 	free(map);
 	return (vect);
