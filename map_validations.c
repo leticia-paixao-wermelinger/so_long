@@ -36,8 +36,8 @@ int	verify_map_items(char **map)
 		while (map[i][j])
 		{
 			c = map[i][j];
-			if (c != '1' && c != '0' && c != 'E' && c != 'P'
-				&& c != 'C' && c == ' ')
+			if ((c != '1' && c != '0' && c != 'E' && c != 'P'
+				&& c != 'C') || c == ' ')
 				return (WRONG_CHARACTER);
 			j++;
 		}
