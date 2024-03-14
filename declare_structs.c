@@ -6,7 +6,7 @@
 /*   By: lpaixao- <lpaixao-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:09:07 by lpaixao-          #+#    #+#             */
-/*   Updated: 2024/03/13 17:14:24 by lpaixao-         ###   ########.fr       */
+/*   Updated: 2024/03/14 17:13:17 by lpaixao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,12 @@ t_map	*declare_or_map(int fd)
 	}
 	or_map->width = find_size(or_map, 'x');
 	or_map->height = find_size(or_map, 'y');
-	or_map->x = find_position(or_map->map, 'x');
-	or_map->y = find_position(or_map->map, 'y');
+	if (check_pec(or_map->map, 'P') == NO_ERROR)
+	{
+		or_map->x = find_position(or_map->map, 'x');
+		or_map->y = find_position(or_map->map, 'y');
+	}
 	or_map->num_c = count_cs(or_map->map);
-	or_map->check_c = 0;
-	or_map->check_e = 0;
 	close(fd);
 	return (or_map);
 }

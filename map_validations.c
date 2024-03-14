@@ -6,7 +6,7 @@
 /*   By: lpaixao- <lpaixao-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 13:29:07 by lpaixao-          #+#    #+#             */
-/*   Updated: 2024/03/13 17:17:35 by lpaixao-         ###   ########.fr       */
+/*   Updated: 2024/03/14 16:49:52 by lpaixao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ int	check_pec(char **map, char c)
 		}
 		i++;
 	}
+	if (checker == 0)
+		return (WRONG_PEC);
 	return (NO_ERROR);
 }
 
