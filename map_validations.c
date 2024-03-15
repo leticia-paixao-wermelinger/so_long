@@ -6,7 +6,7 @@
 /*   By: lpaixao- <lpaixao-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 13:29:07 by lpaixao-          #+#    #+#             */
-/*   Updated: 2024/03/14 16:49:52 by lpaixao-         ###   ########.fr       */
+/*   Updated: 2024/03/15 15:12:07 by lpaixao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	verify_map_items(char **map)
 		{
 			c = map[i][j];
 			if ((c != '1' && c != '0' && c != 'E' && c != 'P'
-				&& c != 'C') || c == ' ')
+					&& c != 'C') || c == ' ')
 				return (WRONG_CHARACTER);
 			j++;
 		}

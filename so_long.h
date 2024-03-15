@@ -6,7 +6,7 @@
 /*   By: lpaixao- <lpaixao-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:06:18 by lpaixao-          #+#    #+#             */
-/*   Updated: 2024/03/13 17:03:37 by lpaixao-         ###   ########.fr       */
+/*   Updated: 2024/03/14 20:31:20 by lpaixao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ t_map		*open_map(char *str, int error);
 t_map		*declare_or_map(int fd);
 int			print_error(int e);
 int			verify_extension(char *str);
+int			verify_errors(t_map *or_map);
 char		**read_map(int fd);
 int			check_clear_line(char *map);
 int			verify_map_pec(char **map);

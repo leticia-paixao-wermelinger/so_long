@@ -6,7 +6,7 @@
 /*   By: lpaixao- <lpaixao-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 19:06:56 by lpaixao-          #+#    #+#             */
-/*   Updated: 2024/03/13 17:08:55 by lpaixao-         ###   ########.fr       */
+/*   Updated: 2024/03/14 20:32:02 by lpaixao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,22 @@ int	check_clear_line(char *map)
 		i++;
 	}
 	return (NO_ERROR);
+}
+
+int	verify_errors(t_map *or_map)
+{
+	int	error;
+
+	error = NO_ERROR;
+	if (verify_map_pec(or_map->map) == WRONG_PEC)
+		error = print_error(WRONG_PEC);
+	else if (verify_map_items(or_map->map) == WRONG_CHARACTER)
+		error = print_error(WRONG_CHARACTER);
+	else if (map_is_square(or_map->map) == SQUARE_MAP)
+		error = print_error(SQUARE_MAP);
+	else if (map_is_closed(or_map->map) == CLOSED_MAP)
+		error = print_error(CLOSED_MAP);
+	else if (map_is_playable(or_map) == PLAYABLE_MAP)
+		error = print_error(PLAYABLE_MAP);
+	return (error);
 }

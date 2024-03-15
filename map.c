@@ -6,7 +6,7 @@
 /*   By: lpaixao- <lpaixao-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:17:46 by lpaixao-          #+#    #+#             */
-/*   Updated: 2024/03/13 20:12:48 by lpaixao-         ###   ########.fr       */
+/*   Updated: 2024/03/14 20:36:32 by lpaixao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,15 @@ t_map	*open_map(char *str, int error)
 	t_map	*or_map;
 
 	if (verify_extension(str) == FILE_EXTENSION_ERROR)
+	{
 		error = print_error(FILE_EXTENSION_ERROR);
+		exit(0);
+	}
 	fd = open(str, O_RDWR);
 	if (fd < 0)
 		error = print_error(MAP_FAILED_OPEN);
 	or_map = declare_or_map(fd);
-	if (verify_map_pec(or_map->map) == WRONG_PEC)
-		error = print_error(WRONG_PEC);
-	else if (verify_map_items(or_map->map) == WRONG_CHARACTER)
-		error = print_error(WRONG_CHARACTER);
-	else if (map_is_square(or_map->map) == SQUARE_MAP)
-		error = print_error(SQUARE_MAP);
-	else if (map_is_closed(or_map->map) == CLOSED_MAP)
-		error = print_error(CLOSED_MAP);
-	else if (map_is_playable(or_map) == PLAYABLE_MAP)
-		error = print_error(PLAYABLE_MAP);
+	error = verify_errors(or_map);
 	if (error != NO_ERROR)
 	{
 		clear_or_map(or_map);
