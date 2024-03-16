@@ -6,7 +6,7 @@
 /*   By: lpaixao- <lpaixao-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:17:46 by lpaixao-          #+#    #+#             */
-/*   Updated: 2024/03/14 20:36:32 by lpaixao-         ###   ########.fr       */
+/*   Updated: 2024/03/16 13:59:26 by lpaixao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ t_map	*open_map(char *str, int error)
 	}
 	fd = open(str, O_RDWR);
 	if (fd < 0)
+	{
 		error = print_error(MAP_FAILED_OPEN);
+		exit(0);
+	}
 	or_map = declare_or_map(fd);
 	error = verify_errors(or_map);
 	if (error != NO_ERROR)
