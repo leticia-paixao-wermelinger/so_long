@@ -1,3 +1,5 @@
+<img src="./cover-so_long.png"/>
+
 # so_long
 
 ![image](https://github.com/leticia-paixao-wermelinger/so_long/assets/127577831/bc594322-a77f-4511-a2b5-0ce41d4332ca)
